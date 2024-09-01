@@ -1,0 +1,19 @@
+<label for="inputUserName">Select brand</label>
+<select class="form-control" name="brandId" id="brandId">
+    <option value="">--select Brand--</option>
+    <% for(var b of brandData) {%>
+        <option value="<%=b.id%>">
+            <%=b.Brandname%>
+        </option>
+        <% }%>
+</select>
+
+<label for="inputUserName">Select type</label>
+<select class="form-control" name="typeId" id="typeId">
+    <option value="">--select types--</option>
+    <% for(var t of typeData) {%>
+        <option value="<%=t.id%>">
+            <%=t.typename%>
+        </option>
+        <% }%>
+</select>

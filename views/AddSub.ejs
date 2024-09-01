@@ -1,0 +1,57 @@
+<%- include('header') %>
+
+
+    <div class="content">
+        <div class="animated fadeIn">
+
+
+            <div class="row">
+
+
+
+
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">Example Form</div>
+                        <div class="card-body card-block">
+                            <form action="/subcategory/insertSubCategory" method="post" >
+
+                                <select name="categoryId" id="categoryId" class="form-control-sm form-control">
+
+                                    <option value="">--select Category--</option>
+                                    <% for(var cd of catdata){%>
+                                        <option value="<%= cd.id %>">
+                                            <%= cd.categoryname %>
+                                        </option>
+                                        <% } %>
+                                </select>
+
+
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                        <input type="text"   name="subcatagoryname"
+                                            placeholder="Enter  subcatagory" class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-actions form-group"><input name="submit" type="submit" value="submit"
+                                        class="btn btn-success btn-sm"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div><!-- .animated -->
+    </div><!-- .content -->
+
+    <div class="clearfix"></div>
+
+
+
+    <%- include('footer') %>

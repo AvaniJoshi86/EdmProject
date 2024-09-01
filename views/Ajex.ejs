@@ -1,0 +1,9 @@
+<select class="form-control" name="extracategoryId" id="extracategoryId">
+    <option value="">--select Extracate--</option>
+    <% for(var e of extradata) { %>
+
+        <option value="<%= e.id %>"><%= e.extracategoryname %></option>
+       
+       <% } %>
+</select>
+

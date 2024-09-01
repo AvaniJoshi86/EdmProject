@@ -1,0 +1,158 @@
+<%- include('header') %>
+
+
+    <div class="content">
+        <div class="animated fadeIn">
+
+
+            <div class="row">
+
+
+
+
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">Example Form</div>
+                        <div class="card-body card-block">
+                            <form action="/product/insertproduct" id="basicform" method="post" enctype="multipart/form-data">
+
+                                <div class="form-group">
+                                    <label for="inputUserName">Enter Category</label>
+                                    <select class="form-control" name="categoryId" id="categoryId"
+                                        onchange="getSubcategoryData()">
+                                        <option value="">--select Category--</option>
+                                        <% for(var cd of catdata){%>
+                                            <option value="<%= cd.id %>">
+                                                <%= cd.categoryname %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputUserName">Select Subcategory</label>
+                                    <select class="form-control" name="subcategoryId" id="subcategoryId"
+                                        onchange="getextracategorydata()">
+                                        <option value="">--select subcategory--</option>
+
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="inputUserName">Select extracategory</label>
+                                    <select class="form-control" name="extracategoryId" id="extracategoryId"
+                                        onchange="getBrandType()">
+                                        <option value="">--select extracategory--</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group" id="BrandTypeData">
+                                    <label for="inputUserName">Select Brand</label>
+                                    <select class="form-control" name="brandId" id="brandId">
+                                        <option value="">--select Brand--</option>
+
+
+                                    </select>
+                                    <label for="inputUserName">Select types</label>
+                                    <select class="form-control" name="typeId" id="typeId">
+                                        <option value="">--select types--</option>
+
+
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputUserName">Enter productname</label>
+                                    <input id="inputUserName" type="text" name="productname"
+                                        data-parsley-trigger="change" required="" placeholder="Enter product name"
+                                        autocomplete="off" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputUserName">Enter Price</label>
+                                    <input id="inputUserName" type="text" name="price" data-parsley-trigger="change"
+                                        required="" placeholder="Enter product name" autocomplete="off"
+                                        class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputUserName">Enter Old Price</label>
+                                    <input id="inputUserName" type="text" name="oldprice" data-parsley-trigger="change"
+                                        required="" placeholder="Enter product name" autocomplete="off"
+                                        class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputUserName">Rating</label>
+                                    <input id="inputUserName" type="radio" name="Rating" value="1">1
+                                    <input id="inputUserName" type="radio" name="Rating" value="2">2
+                                    <input id="inputUserName" type="radio" name="Rating" value="3">3
+                                    <input id="inputUserName" type="radio" name="Rating" value="4">4
+                                    <input id="inputUserName" type="radio" name="Rating" value="5">5
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputUserName">Enter Color</label>
+                                    <input id="inputUserName" type="checkbox" name="Color[]" value="red">red
+                                    <input id="inputUserName" type="checkbox" name="Color[]" value="white">white
+                                    <input id="inputUserName" type="checkbox" name="Color[]" value="blue">blue
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputUserName">Enter Discription:- </label>
+                                   
+                                         
+
+                                        <div class="col-12 col-md-9"><textarea name="Discription" id="textarea-input" rows="9" placeholder="Enter product Discription" class="form-control"></textarea></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row form-group">
+
+                                        <div class="col-12 col-md-9"><input type="file" id="file-input"
+                                                name="image" class="form-control-file"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row form-group">
+
+                                        <div class="col-12 col-md-9"><input type="file" id="file-input" multiple
+                                                name="multipleImage" class="form-control-file"></div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+
+                                    <div class="col-sm-6 pl-0">
+                                        <p class="text-right">
+                                            <input type="submit" class="btn btn-space btn-primary" value="Add Data"
+                                                name="Submit">
+                                            <button class="btn btn-space btn-secondary">Cancel</button>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div><!-- .animated -->
+    </div><!-- .content -->
+
+    <div class="clearfix"></div>
+
+
+
+    <%- include('footer') %>

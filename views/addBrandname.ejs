@@ -1,0 +1,80 @@
+<%- include('header') %>
+
+
+    <div class="content">
+        <div class="animated fadeIn">
+
+
+            <div class="row">
+
+
+
+
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">Example Form</div>
+                        <div class="card-body card-block">
+                            <form action="/addBrandname/insertBrand" id="basicform"  method="post">
+    
+                                <div class="form-group">
+                                    <label for="inputUserName">Enter Category</label>
+                                    <select class="form-control" name="categoryId" id="categoryId" onchange="getSubcategoryData()">
+                                            <option value="">--select Category--</option>
+                                            <% for(var cd of catdata){%>
+                                            <option value="<%= cd.id %>"><%= cd.categoryname %></option>
+                                            <% } %>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputUserName">Select Subcategory</label>
+                                    <select class="form-control" name="subcategoryId" id="subcategoryId" onchange="getextracategorydata()">
+                                                <option value="">--select subcategory--</option>
+                                            
+                                            
+                                    </select>
+                                </div>
+    
+    
+                                <div class="form-group">
+                                    <label for="inputUserName">Select extracategory</label>
+                                    <select class="form-control" name="extracategoryId" id="extracategoryId">
+                                                <option value="">--select extracategory--</option>
+                                            
+                                            
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputUserName">Enter Brandname</label>
+                                    <input id="inputUserName" type="text" name="Brandname"  data-parsley-trigger="change" required="" placeholder="Enter Brand Name" autocomplete="off" class="form-control">
+                                </div>
+    
+                                
+                                
+                                <div class="row">
+                                   
+                                    <div class="col-sm-6 pl-0">
+                                        <p class="text-right">
+                                            <input  type="submit" class="btn btn-space btn-primary" value="Add Admin" name="Submit">
+                                            <button class="btn btn-space btn-secondary">Cancel</button>
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div><!-- .animated -->
+    </div><!-- .content -->
+
+    <div class="clearfix"></div>
+
+
+
+    <%- include('footer') %>
